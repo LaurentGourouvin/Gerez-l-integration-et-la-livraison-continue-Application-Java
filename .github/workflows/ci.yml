@@ -19,6 +19,9 @@ jobs:
     name: build-docker-image
     runs-on: ubuntu-latest
     needs: test
+    permissions:
+      contents: read
+      packages: write
     steps:
       - name: Checkout on code
         uses: actions/checkout@v4
