@@ -12,6 +12,10 @@ RUN ./gradlew bootWar
 
 # Environnement to start the project from the WAR
 FROM eclipse-temurin:21-jre-alpine-3.23 AS runner
+
+# Install curl for healthcheck
+RUN apk add --no-cache curl
+
 RUN mkdir /opt/app
 
 # Copy the WAR from the compiler STAGE
